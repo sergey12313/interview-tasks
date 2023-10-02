@@ -1,20 +1,10 @@
-# Тестовое задание
-
-## 1. Верстка
-### Задача: дополнить scss правила так, чтобы представленная html разметка приобрела вид как на картинке.
-
-https://codepen.io/sergey12313/pen/KKbxKRG
-
-
-
-## 2. JS
-### Задача: написать функцию `decode` в том же стиле, что и функция `encode` (вытянутой в цепочку) и узнать значение переменной `input`
-
-[decode.ts](https://github.com/sergey12313/interview-tasks/blob/main/src/decode.ts)
-
-
-```typescript
-const decode = (value: string) =>
+/**
+ * Decodes a value by performing a series of transformations.
+ *
+ * @param {string} value - The value to be decoded.
+ * @return {string} - The decoded value.
+ */
+export const decode = (value: string): string =>
   String.fromCharCode(
     ...value
       .replace(/(?<token>[\.\-])(?<value>\d*)/g, (_, token, value) => {
@@ -52,9 +42,3 @@ const decode = (value: string) =>
       .sort((a, b) => a[1] - b[1])
       .map((value) => value[0])
   );
-
-console.log(decode(decode(input))); //i love puzzles
-```
-
-
-
