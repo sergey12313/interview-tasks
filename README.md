@@ -49,7 +49,7 @@ const decode = (value: string) =>
         }
         return acc;
       }, [])
-      .sort((a, b) => a[1] - b![1])
+      .sort((a, b) => a[1] - b[1])
       .map((value) => value[0])
   );
 
